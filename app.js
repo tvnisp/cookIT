@@ -9,7 +9,6 @@ var express = require("express"),
 
 
 // mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
-majority
 mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
 
 
