@@ -1,6 +1,6 @@
 var express = require("express"),
     app     = express(),
-    port    = 3000,
+    port    = process.env.PORT || 5000,
     landing = require("./routes/landing"),
     recipes = require("./routes/recipes"),
     mongoose = require("mongoose"),
