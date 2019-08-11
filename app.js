@@ -8,7 +8,9 @@ var express = require("express"),
     methodOverride = require("method-override")
 
 
-mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
+
+mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 
 // Set the app
