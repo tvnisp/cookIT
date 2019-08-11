@@ -1,6 +1,6 @@
 var express = require("express"),
     app     = express(),
-    port    = 27017,
+    port    = 3000,
     landing = require("./routes/landing"),
     recipes = require("./routes/recipes"),
     mongoose = require("mongoose"),
@@ -9,7 +9,7 @@ var express = require("express"),
 
 
 // mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
-
+majority
 mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
 
 
