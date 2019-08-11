@@ -1,6 +1,6 @@
 var express = require("express"),
     app     = express(),
-    port    = 3000,
+    port    = 27017,
     landing = require("./routes/landing"),
     recipes = require("./routes/recipes"),
     mongoose = require("mongoose"),
