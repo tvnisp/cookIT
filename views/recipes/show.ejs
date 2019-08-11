@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div id="index">
+    <div class="show-container">
+        <div class="show-thumbnail">
+            <img src="<%=recipe.image%>">
+            <div class="show-text">
+                <h2 class="show-name"><%=recipe.name%> <i class="fas fa-angle-left"></i></h2>
+                <h5 class="show-author">by <%=recipe.author%></h5>
+                <p class="show-desc"><%=recipe.body.substring(0,30)%> .....</p>
+                <p><span>Published: <%=recipe.date.toDateString()%></span></p>
+                <a href="/recipes">Go Back</a>
+                <a href="/recipes/<%=recipe._id%>/edit">Edit</a>
+                <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="post">
+                    <button>Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

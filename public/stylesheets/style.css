@@ -1,0 +1,348 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    color: #CFFFB3;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Navigation Bar */
+
+.burger {
+    cursor: pointer;
+    display: none;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background: #CFFFB3;
+    margin: 5px;
+}
+
+.active {
+    border-bottom: 2px solid #CFFFB3;
+    padding-bottom: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    min-height: 10vh;   
+    background: #3a5743;
+    border-bottom: 1px solid #CFFFB3;
+}
+
+nav a {
+    color: #CFFFB3;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: color 500ms;
+}
+
+.brand a {
+    font-size: 2.5rem;
+    font-family: 'Covered By Your Grace', cursive;
+    letter-spacing: 1px;
+    font-weight: 300;
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #CFFFB3;
+    box-shadow: 2px 2px 5px #CFFFB3;
+    margin: 8px;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+nav a:hover {
+    color: #fcec52;
+}
+
+nav i {
+    padding: 0 5px;
+    color: #fcec52;
+}
+
+@media only screen and (max-width: 1400px) {
+    .menu-list {
+        width: 50% !important; 
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    html {
+        font-size: 14px;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .menu-list {
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        background: #3a5743;
+        flex-direction: column;
+        height: 92vh;
+        align-items: center;
+        width: 25% !important;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .menu-list li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+.menu-active {
+    transform: translateX(0) ;
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+.line1, .line2, .line3 {
+    transition: transform 300ms;
+}
+
+.toggle .line1{
+    transform: rotate(405deg) translate(4.6px);
+}
+.toggle .line2 {
+    display: none;
+}
+.toggle .line3 {
+    transform: rotate(-405deg) translate(4px);
+}
+
+
+/* Landing header */
+
+.header {
+    background-image: url("../img/landing.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header a {
+    background: #3a5743;
+    border: 3px solid #CFFFB3;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-size: 5rem;
+    color: #CFFFB3;
+    box-shadow: 3px 3px 15px #CFFFB3;
+    transition: padding 500ms,
+                color 500ms;
+    font-family: 'Covered By Your Grace', cursive;
+}
+
+.header a:hover {
+    padding: 20px 60px;
+    color: #fcec52;
+}
+
+/* Recipes Index */
+
+#index {
+    background: #fcec52;
+    min-height: 90vh;
+}
+
+.jumbotron {
+    margin: 1.66%;
+    background: #3a5743;
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.jumbotron h1 {
+    font-size: 4rem;
+}
+
+.jumbotron .add-rec {
+    display: block;
+    margin-top: 50px;
+    width: 200px;
+    background: #CFFFB3;
+    text-align: center;
+    text-decoration: none;
+    color: #3a5743;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #fcec52;
+}
+
+.container {
+    width: 75%;
+    padding-top: 3vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 30%;
+    margin: 1.66%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #3a5743;
+    background: #3a5743;
+}
+
+.thumbnail a {
+    color: #fcec52;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    text-align: right;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid #CFFFB3;
+    border-radius: 2px;
+}
+
+.thumbnail .text {
+    height: 140px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.thumbnail .text i {
+    margin-left: 10px;
+    color: #fcec52;
+}
+
+.rec-name, .rec-author, .rec-desc {
+    color: #CFFFB3;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.rec-name {
+    font-size: 1.5rem;
+}
+.rec-author {
+    font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .thumbnail {
+        width: 40%;
+        margin: 5%;
+    }
+    .container {
+        width: 90%;
+    }
+}
+
+/* New recipe form  */
+
+.form-rec-new {
+    height: 70vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-rec-new form {
+    width: 350px;   
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #3a5743;
+    box-shadow: 2px 2px 10px #3a5743;
+    padding: 50px;
+}
+
+.form-rec-new form input {
+    display: block;
+    margin: 5px;
+    padding: 10px;
+}
+
+.new-rec-header {
+    text-align: center;
+    color: black;
+    font-size: 3rem;
+    padding-top: 100px;
+    color: #3a5743;
+    text-shadow: 2px 2px 10px #CFFFB3;
+}
+
+/* SHOW */
+
+.show-container {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 3vh;
+}
+
+.show-thumbnail {
+    background: #3a5743;
+    border: #CFFFB3 3px solid;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.show-container button {
+    float: right;
+    color: #fcec52;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    font-size: 1.1.rem;
+}
+
+.show-text {
+    padding: 10px 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.show-text a {
+    color: #fcec52;
+    text-align: right;
+}
+
+.show-thumbnail img {
+    width: 100%;
+}
+
+.show-name, .show-author, .show-desc {
+    color: #CFFFB3;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,15 @@
+<% include ../partials/header%>
+<div id="index">
+    <h1 class="new-rec-header">Add a new Recipe</h1>
+    <div class="form-rec-new">
+        <form action="/recipes" method="POST">
+            <input type="text" name="recipe[name]" placeholder="Recipe Name">        
+            <input type="text" name="recipe[author]" placeholder="Author">
+            <input type="text" name="recipe[image]" placeholder="Image Url">
+            <input type="text" name="recipe[body]" placeholder="Description">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>
