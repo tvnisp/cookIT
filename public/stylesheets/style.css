@@ -9,11 +9,16 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+#index, .header {
+    padding-top: 10vh;
+}
+
 /* Navigation Bar */
 
 .burger {
     cursor: pointer;
     display: none;
+    margin-right: 1rem;
 }
 
 .burger div {
@@ -29,6 +34,11 @@ body {
 }
 
 nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -38,7 +48,6 @@ nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0 2rem;
     height: 10vh;   
     background: #3a5743;
     border-bottom: 1px solid #CFFFB3;
@@ -96,16 +105,11 @@ nav i {
     html {
         font-size: 14px;
     }
-    body {
-        overflow: hidden;
-        position: relative;
-        height: 100%;
-    }
     .menu-list {
         position: absolute;
         top: 10vh;
         right: 0;
-        background: #3a5743;
+        background: #3a5743b9;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -273,8 +277,8 @@ nav i {
 }
 
 .thumbnail {
-    width: 30%;
     margin: 1.66%;
+    width: 30%;
     border-radius: 10px;
     -webkit-box-shadow: 4px 4px 10px #3a5743;
             box-shadow: 4px 4px 10px #3a5743;
