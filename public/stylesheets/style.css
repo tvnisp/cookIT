@@ -39,7 +39,7 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     padding: 0 2rem;
-    min-height: 10vh;   
+    height: 10vh;   
     background: #3a5743;
     border-bottom: 1px solid #CFFFB3;
 }
@@ -97,7 +97,7 @@ nav i {
         font-size: 14px;
     }
     body {
-        overflow-x: hidden;
+        overflow: hidden;
     }
     .menu-list {
         position: absolute;
@@ -108,7 +108,7 @@ nav i {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: 92vh;
+        height: 90vh;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
