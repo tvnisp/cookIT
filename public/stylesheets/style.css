@@ -3,6 +3,11 @@ html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
+@media only screen and (max-width: 1200px){
+    html {
+        font-size: 14px;
+    }
+}
 
 body {
     color: #CFFFB3;
@@ -18,7 +23,7 @@ body {
 .burger {
     cursor: pointer;
     display: none;
-    margin-right: 1rem;
+    margin-right: 5px;
 }
 
 .burger div {
@@ -74,7 +79,7 @@ nav a {
     border: 1px solid #CFFFB3;
     -webkit-box-shadow: 2px 2px 5px #CFFFB3;
             box-shadow: 2px 2px 5px #CFFFB3;
-    margin: 8px;
+            margin-left: 5px;
 }
 
 .menu-list {
@@ -332,11 +337,13 @@ nav i {
 
 @media only screen and (max-width: 1200px) {
     .thumbnail {
-        width: 40%;
-        margin: 5%;
+        width: 45%;
+    }
+    .thumbnail img {
+        height: 200px;
     }
     .container {
-        width: 90%;
+        justify-content: space-between;
     }
 }
 
@@ -414,7 +421,7 @@ form h1 {
     background: transparent;
     border: 0;
     text-decoration: underline;
-    font-size: 1.1.rem;
+    font-size: 1rem;
 }
 
 .show-text {
@@ -429,6 +436,7 @@ form h1 {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    border-top: 2px solid #CFFFB3;
 }
 
 .show-text a {
@@ -437,7 +445,15 @@ form h1 {
 }
 
 .show-thumbnail img {
-    width: 100%;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto 5px auto;
+}
+
+.buttons-show {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
 }
 
 .show-name, .show-author, .show-desc {
