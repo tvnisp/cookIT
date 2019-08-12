@@ -98,6 +98,8 @@ nav i {
     }
     body {
         overflow: hidden;
+        position: relative;
+        height: 100%;
     }
     .menu-list {
         position: absolute;
