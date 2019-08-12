@@ -110,9 +110,12 @@ nav i {
     html {
         font-size: 14px;
     }
+    nav {
+        min-height: 5vh;
+    }
     .menu-list {
         position: absolute;
-        top: 10vh;
+        top: 5vh;
         right: 0;
         z-index: 100;
         background: #000000e8;
@@ -120,7 +123,7 @@ nav i {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: 90vh;
+        height: 95vh;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
@@ -441,12 +444,11 @@ form h1 {
 
 .show-text a {
     color: #fcec52;
-    text-align: right;
 }
 
 .show-thumbnail img {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto 5px auto;
 }
 
@@ -459,4 +461,10 @@ form h1 {
 .show-name, .show-author, .show-desc {
     color: #CFFFB3;
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1200px){
+    .show-container {
+        width: 90%;
+    }
 }
