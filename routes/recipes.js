@@ -27,7 +27,7 @@ router.post("/", function(req, res){
 })
 
 router.get("/:id", function(req, res){
-    Recipe.findById(req.params.id, function(err, foundRecipe){
+    Recipe.findById(req.params.id).populate("comments").exec(function(err, foundRecipe){
         if(err){
             console.log(err);
         } else {

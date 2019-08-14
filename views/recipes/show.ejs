@@ -17,7 +17,20 @@
                     </form>
                 </div>
             </div>
+            <div class="comments">
+                <h1>Comments</h1>
+            <%recipe.comments.forEach(function(comment){%>
+                <p>
+                    <strong><%= comment.author %></strong> - <%=comment.text%>
+                </p>
+            <%})%>
+            </div>
         </div>
+
+
+        <a class="new-comment" href="/recipes/<%=recipe._id%>/comments/new">Add a new Comment</a>
+
+
     </div>
 </div>
 

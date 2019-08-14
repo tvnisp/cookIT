@@ -3,6 +3,7 @@ var express = require("express"),
     port    = process.env.PORT || 5000,
     landing = require("./routes/landing"),
     recipes = require("./routes/recipes"),
+    comments = require("./routes/comments"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
     methodOverride = require("method-override")
@@ -21,6 +22,7 @@ app.use(methodOverride('_method'))
 // Routes USE
 app.use("/", landing)
 app.use("/recipes", recipes)
+app.use("/recipes", comments)
 
 app.listen(port, function(){
     console.log("The CookIT is running at the port: " + port)

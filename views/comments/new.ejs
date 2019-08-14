@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+<div id="index">
+    <div class="form-rec-new">
+        <form action="/recipes/<%=recipe._id%>/comments" method="POST">
+            <h1>Add new Comment to: <%=recipe.name%></h1>
+            <input type="text" name="comment[author]" placeholder="Author">
+            <input type="text" name="comment[text]" placeholder="Description">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>

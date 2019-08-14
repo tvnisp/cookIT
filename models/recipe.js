@@ -6,7 +6,13 @@ var recipeSchema = new mongoose.Schema (
         author: String,
         image: String,
         body: String,
-        date: {type: Date, default: Date.now}
+        date: {type: Date, default: Date.now},
+        comments: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Comment"
+            }
+        ]
     }
 )
 
