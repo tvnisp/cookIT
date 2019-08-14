@@ -42,8 +42,6 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    right: 0;
-    left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -53,7 +51,7 @@ nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    min-height: 10vh;   
+    height: 80px;   
     background: #3a5743;
     border-bottom: 1px solid #CFFFB3;
 }
@@ -115,7 +113,7 @@ nav i {
     }
     .menu-list {
         position: absolute;
-        top: 5vh;
+        top: 81px;
         right: 0;
         z-index: 100;
         background: #000000e8;
@@ -123,7 +121,7 @@ nav i {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: 95vh;
+        height: 89vh;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
