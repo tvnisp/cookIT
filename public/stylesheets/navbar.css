@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 85rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.main-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #CFFFB3;
+}
+
+.main-nav .brand {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 2.5rem;
+}
+
+.main-nav .brand a{
+    padding: .7rem 0 0 0;
+}
+
+.main-nav .brand span {
+    color: #fcec52;
+}
+
+.main-nav h1 {
+    transform: translateX(-50rem);
+    animation: slideIn .5s forwards;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+}
+
+.burger div {
+    height: 4px;
+    width: 25px;
+    margin: 4px;
+    background: #CFFFB3;
+}
+
+.main-nav ul  {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li{
+    margin: 0 1rem;
+    transform: translateX(50rem)
+}
+
+.main-nav ul li a {
+    padding: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+}
+
+.main-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.main-nav i {
+    color: #fcec52;
+    margin-right: .3rem;
+}
+
+.main-nav a::before,
+.main-nav a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    left: 0;
+    background: #fcec52;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.main-nav a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.main-nav a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+
+.main-nav a:hover::before,
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+@keyframes slideIn {
+    from {
+        
+    }
+    to {
+        transform: translateX(0)
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .burger {
+        display: block;
+    }
+    .main-nav ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-top: 1px solid #CFFFB3;
+        border-bottom: 1px solid #CFFFB3;
+        background: rgba(0, 0, 0, 0.705);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        transform: translateY(-150%);
+        transition: transform .5s;
+    }
+    .main-nav ul li {
+        margin-top: 5rem;
+    }
+    .main-nav ul li:first-child {
+        margin-top: 0;
+    }
+    .main-nav ul li:last-child {
+        margin-right: 1rem;
+    }
+}
+
+.main-nav-active {
+    transform: translateY(0) !important;
+}
