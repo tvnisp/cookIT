@@ -149,6 +149,14 @@
     }
 }
 
+@media only screen and (max-width: 900px){
+    .all-recipes #phone {
+        width: 100%;
+        margin: 0 !important;
+        margin-bottom: 50px !important ;
+    }
+}
+
 /* New recipe form  */
 
 .form-rec-new {

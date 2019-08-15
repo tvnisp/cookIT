@@ -4,6 +4,8 @@ var menuList = document.querySelector(".main-nav ul");
 var active = document.querySelectorAll(".main-nav ul li a");
 var activeArr = Array.prototype.slice.call(active);
 
+
+// Toggle menu slide
     menuItems.forEach(function(item, index){
         item.style.animation = `slideIn 0.3s ease forwards ${index /7 }s`
     })
