@@ -49,3 +49,9 @@ html {
     height: 100vh;
     width: 100%;
 }
+
+@media only screen and (max-width: 950px){
+    .recipes a {
+        font-size: 1.5rem;
+    }
+}
