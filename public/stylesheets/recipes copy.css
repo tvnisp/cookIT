@@ -1,151 +1,100 @@
 /* Recipes Index */
 
-.rec-index {
-    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.4)), #fcec52;
-    width: 100%;
-    padding-top: 150px;
-    z-index: -1;
-    min-height: 100vh;
+#index {
+    background: #fcec52;
+    min-height: 90vh;
 }
 
 .jumbotron {
-    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4)), url("../img/jumbotron.jpg") center no-repeat;
-    background-size: cover;
+    margin: 1.66%;
+    background: #3a5743;
     width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 5%;
-    box-shadow: 5px 5px 15px black;
+    height: 200px;
+    border-radius: 20px;
+    padding: 50px;
 }
 
 .jumbotron h1 {
-    font-family: 'Covered By Your Grace', cursive;
-    letter-spacing: 2px;
-    text-shadow: 1px 2px 5px #fceb52cb;
-    color: #CFFFB3;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
 }
 
-
-.jumbotron a {
-    color: #CFFFB3;
-    background: #3a5743b2;
-    border-radius: 5px;
-    padding: 7px 20px;
-    font-size: 2rem;
-    text-decoration: none;
-    font-weight: 400;
-    border: 1px solid #fcec52;
-    box-shadow: 3px 3px 5px #CFFFB3;
-    transition: all .5s;
-}
-
-.jumbotron a:hover {
-    color: #fcec52;
-    background: #3a5743ea;
-}
-
-@media only screen and (max-width: 950px){
-    .jumbotron h1 {
-        font-size: 2.5rem;
-    }
-    .jumbotron a {
-        font-size: 1.5rem;
-    }
-}
-
-.all-recipes {
+.jumbotron .add-rec {
+    display: block;
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.all-recipes .thumbnail {
-    width: 30%;
-    margin-bottom: 40px;
-    box-shadow: 5px 5px 15px black;
-    height: 480px;
-    border-radius: 5px;
-}
-
-.all-recipes .thumbnail:nth-child(3n+2){
-    margin: 0 5% 0 5%;
-}
-
-.all-recipes .thumbnail img {
-    width: 100%;
-    border-radius: 5px;
-    height: 280px;
-    background-position: center;
-    background-size: cover;
-    border-bottom: 1px solid #CFFFB3;
-}
-
-.all-recipes .thumbnail .rec-text {
-    padding: 5px 0 0 10px;
-}
-
-.rec-text {
-    color: #CFFFB3;
-}
-
-.rec-text h2 {
- font-size: 2rem;
- letter-spacing: 2px;
- font-weight: 500;
- margin-bottom: 5px;
- padding-bottom: 1px;
- border-bottom: 1px solid #CFFFB3;
-}
-
-.rec-text p {
-    font-size: 1.3rem;
-    margin: 5px 0 5px 0;
-}
-
-.rec-text h5 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.rec-text span {
-    color: rgb(34, 41, 31);
-    font-size: 1rem;
-}
-
-.rec-text a {
+    width: 200px;
+    background: #CFFFB3;
+    text-align: center;
     text-decoration: none;
-    color: #CFFFB3;
-    font-weight: bold;
-    text-align: right;
-    float: right;
-    margin-right: 20px;
-    background: #3a5743de;
-    padding: 10px 20px;
+    color: #3a5743;
+    padding: 20px;
+    font-size: 1.5rem;
     border-radius: 10px;
-    border: 1px solid #fcec52;
-    transition: all .5s;
+    border: 2px solid #fcec52;
 }
 
-.rec-text a:hover {
+
+.thumbnail {
+    margin: 1.66%;
+    width: 30%;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px #3a5743;
+            box-shadow: 4px 4px 10px #3a5743;
+    background: #3a5743;
+}
+
+.thumbnail a {
     color: #fcec52;
-    box-shadow: 3px 3px 10px black;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    text-align: right;
 }
 
-@media only screen and (max-width:1200px){
-    .all-recipes .thumbnail {
+.thumbnail img {
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid #CFFFB3;
+    border-radius: 10px;
+}
+
+.thumbnail .text {
+    height: 140px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 10px;
+}
+
+.thumbnail .text i {
+    margin-left: 10px;
+    color: #fcec52;
+}
+
+.rec-name, .rec-author, .rec-desc {
+    color: #CFFFB3;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.rec-name {
+    font-size: 1.5rem;
+}
+.rec-author {
+    font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .thumbnail {
         width: 45%;
-        margin: 0 !important;
-        margin-bottom: 90px !important;
     }
-    
-    .all-recipes .thumbnail:nth-child(2n + 1) {
-        margin-right: 10% !important;
+    .thumbnail img {
+        height: 200px;
+    }
+    .container {
+        justify-content: space-between;
     }
 }
 

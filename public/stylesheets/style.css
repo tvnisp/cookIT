@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 900px){
+    html {
+        font-size: 13px;
+    }
+}
+
+.container {
+    max-width: 85rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container2 {
+    max-width: 85rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.active {
+    color: #fcec52 !important;
+    background: #3a574386;
+    border-radius: 5px;
+    padding: 1rem .5rem !important;
+}

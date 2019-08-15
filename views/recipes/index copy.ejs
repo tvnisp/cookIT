@@ -1,0 +1,26 @@
+<% include ../partials/header%>
+
+<section id="index">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>All the Recipes</h1>
+            <a href="recipes/new" class="add-rec">Add a new Recipe</a>
+        </div>
+    </div>
+    <div class="container">
+    <%recipes.forEach(function(recipe){%>
+        <div class="thumbnail">
+            <img src="<%=recipe.image%>">
+            <div class="text">
+                <h2 class="rec-name"><%=recipe.name%> <i class="fas fa-angle-left"></i></h2>
+                <h5 class="rec-author">by <%=recipe.author%></h5>
+                <p class="rec-desc"><%=recipe.body.substring(0,30)%> .....</p>
+                <p><span>Published: <%=recipe.date.toDateString()%></span></p>
+                <a href="/recipes/<%=recipe._id%>">More Info</a>
+            </div>
+        </div>
+   <% }) %>
+    </div>
+</section>
+
+<% include ../partials/footer %>

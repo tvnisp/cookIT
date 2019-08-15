@@ -5,7 +5,7 @@ var active = document.querySelectorAll(".main-nav ul li a");
 var activeArr = Array.prototype.slice.call(active);
 
     menuItems.forEach(function(item, index){
-        item.style.animation = `slideIn 0.5s ease forwards ${index /7 + 0.2}s`
+        item.style.animation = `slideIn 0.3s ease forwards ${index /7 }s`
     })
 
     $(window).resize(function(){
@@ -33,3 +33,12 @@ function urlCheck(){
 }
 
 urlCheck()
+
+// Navigation bar scroll effect
+$(window).scroll(function(){
+    if ($(document).scrollTop() > 50){
+        $(".main-nav").addClass("scrollNav");
+    } else {
+        $(".main-nav").removeClass("scrollNav");
+    }
+})

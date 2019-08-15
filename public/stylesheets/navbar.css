@@ -1,29 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 16px;
-}
-
-.container {
-    max-width: 85rem;
-    width: 90%;
-    margin: 0 auto;
-}
-
 /* Navigation Bar */
 
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
     padding-top: 3rem;
     top: 0;
     width: 100%;
-    z-index: 10;
+    transition: background .5s;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-nav a {
@@ -47,7 +35,7 @@ html {
 
 .main-nav h1 {
     transform: translateX(-50rem);
-    animation: slideIn .5s forwards;
+    animation: slideIn .3s forwards;
 }
 
 .burger {
@@ -136,6 +124,7 @@ html {
         right: 0;
         left: 0;
         bottom: 0;
+        height: 100vh;
         border-top: 1px solid #CFFFB3;
         border-bottom: 1px solid #CFFFB3;
         background: rgba(0, 0, 0, 0.705);
@@ -158,4 +147,8 @@ html {
 
 .main-nav-active {
     transform: translateY(0) !important;
+}
+
+.scrollNav {
+    background: rgba(0, 0, 0, 0.795);
 }
