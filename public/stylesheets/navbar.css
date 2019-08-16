@@ -3,10 +3,11 @@
 .main-nav {
     position: fixed;
     padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     top: 0;
     width: 100%;
     transition: background .5s;
+    z-index: 10;
 }
 
 .nav {
@@ -115,9 +116,12 @@
     }
 }
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 1000px){
     .burger {
         display: block;
+    }
+    .nav {
+        padding: 0 20px;
     }
     .main-nav ul {
         position: absolute;
@@ -151,5 +155,6 @@
 }
 
 .scrollNav {
-    background: rgba(0, 0, 0, 0.795);
+    background: rgba(0, 0, 0, 0.884);
+    border-bottom: 1px solid #CFFFB3;
 }
