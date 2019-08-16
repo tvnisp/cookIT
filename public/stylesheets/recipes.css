@@ -237,8 +237,17 @@
 }
 
 .show-nav button {
-    background: transparent;
-    border: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #CFFFB3;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.671);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #fcec52;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
 }
 
 .show-nav a {
