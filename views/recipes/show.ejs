@@ -24,15 +24,16 @@
             <div class="comments">
                 <div class="row">
                     <h1>Comments</h1>
-                    <a href="/recipes/<%=recipe._id%>/comments/new">Add a new Comment</a>
+                    <a href="/recipes/<%=recipe._id%>/comments/new">Add new</a>
                 </div>
                 <%recipe.comments.forEach(function(comment){%>
                     <p>
-                        <strong><%= comment.author %></strong> - <%=comment.text%>
+                        <strong><%= comment.author %> : </strong><%=comment.text%>
                     </p>
                 <%})%>
             </div>
         </div>
+        <div class="scrollTop"><i class="fas fa-arrow-circle-up"></i></div>
     </div>
 </header>
 

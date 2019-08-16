@@ -39,3 +39,16 @@ html {
     border-radius: 5px;
     padding: 1rem .5rem !important;
 }
+
+.scrollTop {
+    width: 100%;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+.scrollTop i {
+    color: #fcec52;
+}
