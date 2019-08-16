@@ -3,6 +3,7 @@ var burger = document.querySelector(".burger");
 var menuList = document.querySelector(".main-nav ul");
 var active = document.querySelectorAll(".main-nav ul li a");
 var activeArr = Array.prototype.slice.call(active);
+var scroll = document.querySelector(".scrollTop");
 
 
 // Toggle menu slide
@@ -44,3 +45,13 @@ $(window).scroll(function(){
         $(".main-nav").removeClass("scrollNav");
     }
 })
+
+
+// ScrollTop effect
+scroll.addEventListener("click", function(){
+    $("html, body").animate({
+        scrollTop: 0
+    }, 800)
+})
+
+

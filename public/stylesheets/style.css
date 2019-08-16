@@ -21,6 +21,12 @@ html {
     margin: 0 auto;
 }
 
+.container-show {
+    max-width: 85rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 1000px){
     .container {
         width: 100%;

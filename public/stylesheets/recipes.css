@@ -1,10 +1,15 @@
 /* Recipes Index */
 
-.rec-index {
+.rec-back, .rec-back-show {
     background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.4)), url("../img/bg-recipe.jpg");
     width: 100%;
     z-index: -1;
     min-height: 100vh;
+}
+
+.rec-back-show {
+    padding-top: 180px;
+    padding-bottom: 3rem;
 }
 
 .jumbotron {
@@ -50,7 +55,7 @@
 }
 
 @media only screen and (min-width: 1000px){
-    .rec-index {
+    .rec-back {
         padding-top: 180px;
     }
 }
@@ -175,6 +180,133 @@
     }
 }
 
+.scrollTop {
+    font-size: 4rem;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.scrollTop i {
+    color: #fcec52;
+}
+
+
+/* Show page */
+
+.show {
+    width: 100%;
+    display: flex;
+    border: 1px solid #CFFFB3;
+    box-shadow: 5px 5px 10px black;
+    color: #CFFFB3;
+}
+
+.show:nth-child(2){
+    margin-top: 3rem;
+    padding: 20px;
+}
+
+.show-img {
+    width: 40%;
+    padding: 20px;
+}
+
+.show-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.show-text {
+    width: 70%;
+    border-left: 1px solid #CFFFB3;
+    padding: 20px;
+}
+
+.show-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 5%;
+}
+
+.show-text h5 {
+    font-size: 1.7rem;
+    margin-bottom: 5%;
+}
+
+.show-text p {
+    margin-bottom: 5%;
+    font-size: 1.7rem;
+}
+
+.show-nav {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5%;
+    align-items: center;
+}
+
+.show-nav button {
+    background: transparent;
+    border: none;
+}
+
+.show-nav a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #CFFFB3;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.671);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #fcec52;
+    transition: all .5s; 
+}
+
+.show-nav a:hover {
+    color: #fcec52;
+    box-shadow: 3px 3px 10px black;
+}
+
+.comments {
+    width: 100%;
+}
+
+.comments .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #CFFFB3;
+}
+
+.comments .row a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #CFFFB3;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.671);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #fcec52;
+    transition: all .5s; 
+}
+
+.comments h1 {
+    font-size: 3rem;
+    font-family: 'Covered By Your Grace', cursive;
+}
+
+.comments p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.new-comment {
+    margin-top: 3rem;
+}
+
 /* New recipe form  */
 
 .form-rec-new {
@@ -232,104 +364,3 @@ form h1 {
     }
 }
 
-/* SHOW */
-
-.show-container {
-    width: 40%;
-    margin: 0 auto;
-    padding-top: 3vh;
-}
-
-.show-thumbnail {
-    background: #3a5743;
-    border: #CFFFB3 3px solid;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.show-container button {
-    float: right;
-    color: #fcec52;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    text-decoration: underline;
-    font-size: 1rem;
-}
-
-.show-text {
-    padding: 10px 10px;
-    height: 200px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    border-top: 2px solid #CFFFB3;
-}
-
-.show-text a {
-    color: #fcec52;
-}
-
-.show-thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto 5px auto;
-    border-radius: 5px;
-}
-
-.buttons-show {
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
-}
-
-.show-name, .show-author, .show-desc {
-    color: #CFFFB3;
-    font-size: 1.5rem;
-}
-
-.comments {
-    padding: 10px 10px;
-}
-
-.comments h1 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 19px;
-}
-
-.comments p {
-    margin-top: 10px;
-}
-
-.new-comment {
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #fcec52;
-    font-size: 20px;
-    padding: 5px 10px;
-    background: #3a5743;
-    border: #CFFFB3 3px solid;
-}
-
-@media only screen and (max-width: 1200px){
-    .show-container {
-        width: 90%;
-    }
-}
