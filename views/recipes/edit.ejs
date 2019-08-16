@@ -1,7 +1,7 @@
 <% include ../partials/header%>
-<div id="index">
-    <div class="form-rec-new">
-        <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
+<header class="rec-back-show">
+    <div class="container">
+        <form class="new-recipe" action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
             <h1>Edit: <%=recipe.name%></h1>
             <input type="text" name="recipe[name]" value="<%=recipe.name%>">        
             <input type="text" name="recipe[author]" value="<%=recipe.author%>">
@@ -10,6 +10,6 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-</div>
+</header>
 
 <% include ../partials/footer %>
