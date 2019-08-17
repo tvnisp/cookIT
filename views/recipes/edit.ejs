@@ -8,6 +8,9 @@
             <input type="text" name="recipe[image]" value="<%=recipe.image%>">
             <input type="text" name="recipe[body]" value="<%=recipe.body%>">
             <input type="submit" value="Submit">
+            <div class="show-nav">
+                <a href="/recipes/<%= recipe._id%>">Back</a>
+            </div>
         </form>
     </div>
 </header>

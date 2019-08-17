@@ -332,7 +332,9 @@
 
 .new-recipe {
     display: flex;
-    width: 400px;
+    width: 500px;
+    justify-content: center;
+    height: 500px;
     flex-direction: column;
     margin: 0 auto;
     padding: 40px 60px;
@@ -340,6 +342,13 @@
     background: rgba(0, 0, 0, 0.808);
     border: 1px solid #CFFFB3;
     box-shadow: 10px 10px 15px black;
+}
+
+@media only screen and (max-width: 950px){
+    .new-recipe {
+        width: 320px;
+        height: 320px;
+    }
 }
 
 .new-recipe h1 {

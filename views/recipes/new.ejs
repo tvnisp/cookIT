@@ -4,11 +4,14 @@
     <div class="container">
         <form class="new-recipe" action="/recipes" method="POST">
             <h1>Add new recipe</h1>
-            <input type="text" name="recipe[name]" placeholder="Recipe Name">        
-            <input type="text" name="recipe[author]" placeholder="Author">
-            <input type="text" name="recipe[image]" placeholder="Image Url">
-            <input type="text" name="recipe[body]" placeholder="Description">
+            <input type="text" name="recipe[name]" placeholder="Recipe Name" required>        
+            <input type="text" name="recipe[author]" placeholder="Author" required>
+            <input type="text" name="recipe[image]" placeholder="Image Url" required>
+            <input type="text" name="recipe[body]" placeholder="Description" required>
             <input type="submit" value="Submit">
+            <div class="show-nav">
+                <a href="/recipes">Go Back</a>
+            </div>
         </form>
     </div>
 </header>
