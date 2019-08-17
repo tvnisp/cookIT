@@ -236,7 +236,8 @@
     align-items: center;
 }
 
-.show-nav button {
+
+.show-nav a, .show-nav button {
     font-size: 1.5rem;
     text-decoration: none;
     color: #CFFFB3;
@@ -250,21 +251,7 @@
     transition: all .5s;
 }
 
-.show-nav a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #CFFFB3;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.671);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid #fcec52;
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-}
-
-.show-nav a:hover {
+.show-nav a:hover, .show-nav button:hover {
     color: #fcec52;
     box-shadow: 3px 3px 10px black;
 }
@@ -347,7 +334,11 @@
 @media only screen and (max-width: 950px){
     .new-recipe {
         width: 320px;
-        height: 320px;
+        height: 400px;
+    }
+    .show-nav a {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
 
