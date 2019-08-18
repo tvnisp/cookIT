@@ -25,9 +25,13 @@
             <ul>
                 <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
                 <li><a href="/recipes"><i class="fas fa-hamburger"></i>Recipes</a></li>
-                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Login</a></li>
-                <li><a href="#"><i class="fas fa-user-plus"></i>Register</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                <%if (!currentUser){%>
+                    <li><a href="/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                    <li><a href="/register"><i class="fas fa-user-plus"></i>Register</a></li>
+                <%} else { %>
+                    <li><a href="#"><i class="fas fa-user"></i><%=currentUser.username%></a></li>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                <%}%>                
             </ul>
         </div>
     </nav>

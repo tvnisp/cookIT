@@ -8,15 +8,17 @@
             </div>
             <div class="show-text">
                 <h2>Recipe: <%=recipe.name%> <i class="fas fa-angle-left"></i></h2>
-                <h5>by: <%=recipe.author%></h5>
+                <h5>by: <%=recipe.author.username%></h5>
                 <p><%=recipe.body%></p>
                 <p><span>Published: <%=recipe.date.toDateString()%></span></p>
                 <div class="small-nav">
                     <a href="/recipes">Go Back</a>
+                    <% if (currentUser && recipe.author.id.equals(currentUser._id)){ %>
                     <a href="/recipes/<%=recipe._id%>/edit">Edit</a>
                     <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="post">
                         <button>Delete</button>
                     </form>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -28,7 +30,7 @@
                 </div>
                 <%recipe.comments.forEach(function(comment){%>
                     <p>
-                        <strong><%= comment.author %> : </strong><%=comment.text%>
+                        <strong><%= comment.author.username %> : </strong><%=comment.text%>
                     </p>
                 <%})%>
             </div>

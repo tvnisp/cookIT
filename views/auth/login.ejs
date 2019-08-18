@@ -1,0 +1,18 @@
+<% include ../partials/header%>
+
+<header class="padding-back">
+    <div class="container">
+        <form class="all-inputs" action="/login" method="POST">
+            <h1>Login</h1>
+            <input type="text" name="username" placeholder="Username" required>        
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+            <div class="small-nav">
+                <a href="/">Go Back</a>
+            </div>
+        </form>
+    </div>
+</header>
+
+
+<% include ../partials/footer %>

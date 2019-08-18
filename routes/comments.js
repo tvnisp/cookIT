@@ -3,7 +3,7 @@ var express = require("express"),
     Recipe = require("../models/recipe"),
     Comment = require("../models/comment")
 
-router.get("/:id/comments/new", function(req, res){
+router.get("/:id/comments/new", isLoggedIn, function(req, res){
     Recipe.findById(req.params.id, function(err, foundRecipe){
         if(err){
             console.log(err)
@@ -13,7 +13,7 @@ router.get("/:id/comments/new", function(req, res){
     })
 });
 
-router.post("/:id/comments", function(req, res){
+router.post("/:id/comments", isLoggedIn, function(req, res){
     Recipe.findById(req.params.id, function(err, recipe){
         if(err){
             console.log(err);
@@ -22,6 +22,9 @@ router.post("/:id/comments", function(req, res){
                 if(err){
                     console.log(err)
                 } else {
+                    comment.author.id = req.user._id;
+                    comment.author.username = req.user.username;
+                    comment.save();
                     recipe.comments.push(comment);
                     recipe.save();
                     res.redirect("/recipes/" + recipe._id)
@@ -31,5 +34,12 @@ router.post("/:id/comments", function(req, res){
     })
 });
 
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    } 
+    res.redirect("/login");
+}
 
 module.exports = router;

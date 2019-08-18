@@ -16,7 +16,7 @@
                         <h2><%=recipe.name.substring(0,14)%>.. <i class="fas fa-angle-left"></i></h2>
                         <p><%=recipe.body.substring(0,15)%> .....</p>
                         <p><%=recipe.date.toDateString()%></p>
-                        <h5><span>by</span> <%=recipe.author%></h5>
+                        <h5><span>by</span> <%=recipe.author.username%></h5>
                         <a href="/recipes/<%=recipe._id%>">More Info</a>
                     </div>
                 </div>

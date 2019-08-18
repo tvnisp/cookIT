@@ -7,20 +7,23 @@ router.get("/", function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("./recipes/index", {recipes: allRecipes});
+            res.render("./recipes/index", {recipes: allRecipes, currentUser: req.user});
         }
     })
 });
 
-router.get("/new", function(req, res){
+router.get("/new", isLoggedIn, function(req, res){
     res.render("./recipes/new");
 })
 
-router.post("/", function(req, res){
+router.post("/", isLoggedIn, function(req, res){
     Recipe.create(req.body.recipe, function(err, newCreated){
         if(err){
             console.log(err);
         } else {
+            newCreated.author.id = req.user._id;
+            newCreated.author.username = req.user.username;
+            newCreated.save();
             res.redirect("/recipes")
         }
     });
@@ -36,7 +39,7 @@ router.get("/:id", function(req, res){
     });
 });
 
-router.get("/:id/edit", function(req, res){
+router.get("/:id/edit", checkOwnerShip, function(req, res){
     Recipe.findById(req.params.id, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -46,7 +49,7 @@ router.get("/:id/edit", function(req, res){
     });
 });
 
-router.put("/:id", function(req, res){
+router.put("/:id", checkOwnerShip, function(req, res){
     Recipe.findByIdAndUpdate(req.params.id, req.body.recipe, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -56,7 +59,7 @@ router.put("/:id", function(req, res){
     });
 });
 
-router.delete("/:id", function(req, res){
+router.delete("/:id", checkOwnerShip, function(req, res){
     Recipe.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log(err);
@@ -65,5 +68,30 @@ router.delete("/:id", function(req, res){
         }
     })
 });
+
+function checkOwnerShip(req, res, next){
+    if(req.isAuthenticated()){
+        Recipe.findById(req.params.id, function(err, updateRecipe){
+            if(err){
+                res.redirect("back");
+            } else {
+                if(updateRecipe.author.id.equals(req.user._id) || req.user.username == "tvnisp"){
+                    next();
+                } else {
+                    res.redirect("back")
+                }
+            }
+        });
+    } else {
+        res.redirect("back")
+    }
+}
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    } 
+    res.redirect("/login");
+}
 
 module.exports = router;

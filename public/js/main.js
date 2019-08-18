@@ -33,6 +33,10 @@ function urlCheck(){
         activePage[0].classList.add("active")
     } else if(window.location.pathname.includes("recipes")){
         activePage[1].classList.add("active")
+    } else if (window.location.pathname.includes("register")){
+        activePage[3].classList.add("active")
+    } else if (window.location.pathname.includes("login")){
+        activePage[2].classList.add("active")
     }
 }
 urlCheck();
