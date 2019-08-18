@@ -1,14 +1,14 @@
 <% include ../partials/header%>
-<header class="rec-back-show">
+<header class="padding-back">
     <div class="container">
-        <form class="new-recipe" action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
+        <form class="all-inputs" action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
             <h1>Edit: <%=recipe.name%></h1>
             <input type="text" name="recipe[name]" value="<%=recipe.name%>">        
             <input type="text" name="recipe[author]" value="<%=recipe.author%>">
             <input type="text" name="recipe[image]" value="<%=recipe.image%>">
             <input type="text" name="recipe[body]" value="<%=recipe.body%>">
             <input type="submit" value="Submit">
-            <div class="show-nav">
+            <div class="small-nav">
                 <a href="/recipes/<%= recipe._id%>">Back</a>
             </div>
         </form>

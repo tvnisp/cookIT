@@ -1,17 +1,15 @@
-var express = require("express"),
-    app     = express(),
-    port    = process.env.PORT || 5000,
-    landing = require("./routes/landing"),
-    recipes = require("./routes/recipes"),
-    comments = require("./routes/comments"),
-    mongoose = require("mongoose"),
-    bodyParser = require("body-parser"),
-    methodOverride = require("method-override")
-
+var express         = require("express"),
+    app             = express(),
+    port            = process.env.PORT || 5000,
+    landing         = require("./routes/landing"),
+    recipes         = require("./routes/recipes"),
+    comments        = require("./routes/comments"),
+    mongoose        = require("mongoose"),
+    bodyParser      = require("body-parser"),
+    methodOverride  = require("method-override");
 
 // mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
 mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
-
 
 // Set the app
 app.set("view engine", "ejs");
@@ -24,6 +22,8 @@ app.use("/", landing)
 app.use("/recipes", recipes)
 app.use("/recipes", comments)
 
+
+// Listen and serve
 app.listen(port, function(){
     console.log("The CookIT is running at the port: " + port)
 })

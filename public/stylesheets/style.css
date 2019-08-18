@@ -38,6 +38,7 @@ html {
     background: #3a574386;
     border-radius: 5px;
     padding: 1rem .5rem !important;
+    box-shadow: 5px 5px 10px black;
 }
 
 .scrollTop {

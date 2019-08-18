@@ -1,17 +1,18 @@
-/* Recipes Index */
-
-.rec-back, .rec-back-show {
+/* Backgrounds */
+.main-back, .padding-back {
     background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.4)), url("../img/bg-recipe.jpg");
     width: 100%;
     z-index: -1;
     min-height: 100vh;
 }
 
-.rec-back-show {
+.padding-back {
     padding-top: 180px;
     padding-bottom: 3rem;
 }
 
+
+/* Jumbotron by Recipes */
 .jumbotron {
     background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4)), url("../img/jumbotron.jpg") center no-repeat;
     background-size: cover;
@@ -55,7 +56,7 @@
 }
 
 @media only screen and (min-width: 1000px){
-    .rec-back {
+    .main-back {
         padding-top: 180px;
     }
 }
@@ -69,6 +70,7 @@
     }
 }
 
+/* All recipes */
 .all-recipes {
     margin-top: 50px;
     display: flex;
@@ -229,7 +231,8 @@
     width: 100%;
 }
 
-.show-nav {
+/* Small navigation buttons */
+.small-nav {
     display: flex;
     justify-content: space-around;
     padding-top: 5%;
@@ -237,7 +240,7 @@
 }
 
 
-.show-nav a, .show-nav button {
+.small-nav a, .small-nav button, .comments .row a {
     font-size: 1.5rem;
     text-decoration: none;
     color: #CFFFB3;
@@ -251,12 +254,15 @@
     transition: all .5s;
 }
 
-.show-nav a:hover, .show-nav button:hover {
+.small-nav a:hover, .small-nav button:hover {
     color: #fcec52;
     box-shadow: 3px 3px 10px black;
 }
 
 @media only screen and (max-width:950px) {
+    .small-nav button, .comments .row a {
+        font-size: 1rem !important;
+    }
     .show {
         flex-direction: column;
     }
@@ -273,6 +279,8 @@
     }
 }
 
+/* Comments styling */
+
 .comments {
     width: 100%;
 }
@@ -283,18 +291,6 @@
     align-items: center;
     margin-bottom: 2rem;
     border-bottom: 1px solid #CFFFB3;
-}
-
-.comments .row a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #CFFFB3;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.671);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid #fcec52;
-    transition: all .5s; 
 }
 
 .comments h1 {
@@ -317,7 +313,9 @@
     margin-top: 3rem;
 }
 
-.new-recipe {
+/* All input styling */
+
+.all-inputs {
     display: flex;
     width: 500px;
     justify-content: center;
@@ -332,24 +330,24 @@
 }
 
 @media only screen and (max-width: 950px){
-    .new-recipe {
+    .all-inputs {
         width: 320px;
         height: 400px;
     }
-    .show-nav a {
+    .small-nav a {
         font-size: 1rem;
         padding: 10px 20px;
     }
 }
 
-.new-recipe h1 {
+.all-inputs h1 {
     text-align: center;
     color: #CFFFB3;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.new-recipe input {
+.all-inputs input {
     margin: .5rem 0;
     padding: 5px;
     font-size: 1rem;

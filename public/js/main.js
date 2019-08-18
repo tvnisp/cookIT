@@ -1,41 +1,41 @@
-var menuItems = document.querySelectorAll(".main-nav ul li");
-var burger = document.querySelector(".burger");
-var menuList = document.querySelector(".main-nav ul");
-var active = document.querySelectorAll(".main-nav ul li a");
-var activeArr = Array.prototype.slice.call(active);
-var scroll = document.querySelector(".scrollTop");
+var menuItems  = document.querySelectorAll(".main-nav ul li"),
+    burger     = document.querySelector(".burger"),
+    menuList   = document.querySelector(".main-nav ul"),
+    activePage = Array.prototype.slice.call(document.querySelectorAll(".main-nav ul li a")),
+    scroll     = document.querySelector(".scrollTop")
 
 
-// Toggle menu slide
-    menuItems.forEach(function(item, index){
-        item.style.animation = `slideIn 0.3s ease forwards ${index /7 }s`
-    })
+// Burger - Menu
 
-    $(window).resize(function(){
-        if ($(window).width() > 950) {
-            menuList.classList.remove("main-nav-active")
-        }
-         else {
-        }
-    })
-    
-    menuList.addEventListener("click", function(){
+menuItems.forEach(function(item, index){
+    item.style.animation = `slideIn 0.3s ease forwards ${index /7 }s`
+})
+
+$(window).resize(function(){
+    if ($(window).width() > 950) {
         menuList.classList.remove("main-nav-active")
-    })
+    }
+        else {
+    }
+})
 
-    burger.addEventListener("click", function(){
-        menuList.classList.toggle("main-nav-active")
-    })
+menuList.addEventListener("click", function(){
+    menuList.classList.remove("main-nav-active")
+})
 
+burger.addEventListener("click", function(){
+    menuList.classList.toggle("main-nav-active")
+})
+
+// Check and add Active class to active page
 function urlCheck(){
     if(window.location.pathname == "/") {
-        activeArr[0].classList.add("active")
-    } else if(window.location.pathname == "/recipes"){
-        activeArr[1].classList.add("active")
+        activePage[0].classList.add("active")
+    } else if(window.location.pathname.includes("recipes")){
+        activePage[1].classList.add("active")
     }
 }
-
-urlCheck()
+urlCheck();
 
 // Navigation bar scroll effect
 $(window).scroll(function(){
