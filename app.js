@@ -12,8 +12,8 @@ var express         = require("express"),
     LocalStrategy   = require("passport-local"),
     User            = require("./models/user");
 
-mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
-// mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
+// mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
 
 // Passport Configuration
 app.use(require("express-session")({
