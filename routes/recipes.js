@@ -1,6 +1,7 @@
-var express = require("express"),
-    router = express.Router(),
-    Recipe = require("../models/recipe")
+var express     = require("express"),
+    router      = express.Router(),
+    Recipe      = require("../models/recipe"),
+    middleware  = require("../middleware")
 
 router.get("/", function(req, res){
     Recipe.find({}, function(err, allRecipes){
@@ -12,11 +13,11 @@ router.get("/", function(req, res){
     })
 });
 
-router.get("/new", isLoggedIn, function(req, res){
+router.get("/new", middleware.isLoggedIn, function(req, res){
     res.render("./recipes/new");
 })
 
-router.post("/", isLoggedIn, function(req, res){
+router.post("/", middleware.isLoggedIn, function(req, res){
     Recipe.create(req.body.recipe, function(err, newCreated){
         if(err){
             console.log(err);
@@ -39,7 +40,7 @@ router.get("/:id", function(req, res){
     });
 });
 
-router.get("/:id/edit", checkRecipeOwnership, function(req, res){
+router.get("/:id/edit", middleware.checkRecipeOwnership, function(req, res){
     Recipe.findById(req.params.id, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -49,7 +50,7 @@ router.get("/:id/edit", checkRecipeOwnership, function(req, res){
     });
 });
 
-router.put("/:id", checkRecipeOwnership, function(req, res){
+router.put("/:id", middleware.checkRecipeOwnership, function(req, res){
     Recipe.findByIdAndUpdate(req.params.id, req.body.recipe, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -59,7 +60,7 @@ router.put("/:id", checkRecipeOwnership, function(req, res){
     });
 });
 
-router.delete("/:id", checkRecipeOwnership, function(req, res){
+router.delete("/:id", middleware.checkRecipeOwnership, function(req, res){
     Recipe.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log(err);
@@ -68,30 +69,5 @@ router.delete("/:id", checkRecipeOwnership, function(req, res){
         }
     })
 });
-
-function checkRecipeOwnership(req, res, next){
-    if(req.isAuthenticated()){
-        Recipe.findById(req.params.id, function(err, updateRecipe){
-            if(err){
-                res.redirect("back");
-            } else {
-                if(updateRecipe.author.id.equals(req.user._id) || req.user.username == "tvnisp"){
-                    next();
-                } else {
-                    res.redirect("back")
-                }
-            }
-        });
-    } else {
-        res.redirect("back")
-    }
-}
-
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } 
-    res.redirect("/login");
-}
 
 module.exports = router;

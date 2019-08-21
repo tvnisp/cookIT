@@ -1,9 +1,9 @@
-var express = require("express"),
-    router = express.Router(),
-    passport        = require("passport"),
-    LocalStrategy   = require("passport-local"),
-    User            = require("../models/user"),
-    passportLocalMongoose = require("passport-local-mongoose")
+var express                 = require("express"),
+    router                  = express.Router(),
+    passport                = require("passport"),
+    LocalStrategy           = require("passport-local"),
+    User                    = require("../models/user"),
+    passportLocalMongoose   = require("passport-local-mongoose")
 
 // Register Page
 router.get("/register", function(req, res){
@@ -42,12 +42,5 @@ router.get("/logout", function(req, res){
     req.logout();
     res.redirect("/");
 });
-
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } 
-    res.redirect("/login");
-}
 
 module.exports = router;
