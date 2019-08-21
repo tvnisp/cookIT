@@ -1,6 +1,5 @@
 var express         = require("express"),
     app             = express(),
-    port            = process.env.PORT || 5000,
     mongoose        = require("mongoose"),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
@@ -16,9 +15,9 @@ var indexRoutes     = require("./routes/landing"),
     recipesRoutes   = require("./routes/recipes"),
     commentsRoutes  = require("./routes/comments"),
     authRoutes      = require("./routes/auth")
+console.log()
 
-// mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
-mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
 // Passport Configuration
 app.use(require("express-session")({
@@ -55,6 +54,6 @@ app.use(authRoutes)
 
 
 // Listen and serve
-app.listen(port, function(){
-    console.log("The CookIT is running at the port: " + port)
+app.listen(process.env.PORT || 5000, function(){
+    console.log("The CookIT is running")
 })
