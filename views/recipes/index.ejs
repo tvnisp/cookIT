@@ -4,7 +4,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1>All the recipes</h1>
-            <a href="/recipes/new">Add new</a>
+            <a class="button-all" href="/recipes/new">Add new</a>
         </div>
         <section class="all-recipes">
             <%recipes.forEach(function(recipe){%>
@@ -17,7 +17,7 @@
                         <p><%=recipe.body.substring(0,15)%> .....</p>
                         <p><%=recipe.date.toDateString()%></p>
                         <h5><span>by</span> <%=recipe.author.username%></h5>
-                        <a href="/recipes/<%=recipe._id%>">More Info</a>
+                        <a class="button-all" href="/recipes/<%=recipe._id%>">More Info</a>
                     </div>
                 </div>
            <% }) %>

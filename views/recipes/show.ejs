@@ -12,11 +12,11 @@
                 <p><%=recipe.body%></p>
                 <p><span>Published: <%=recipe.date.toDateString()%></span></p>
                 <div class="small-nav">
-                    <a href="/recipes">Go Back</a>
-                    <% if (currentUser && recipe.author.id.equals(currentUser._id)){ %>
-                    <a href="/recipes/<%=recipe._id%>/edit">Edit</a>
+                    <a class="button-all" href="/recipes">Go Back</a>
+                    <% if (currentUser && recipe.author.id.equals(currentUser._id) || currentUser && currentUser.username == "tvnisp"){ %>
+                    <a class="button-all" href="/recipes/<%=recipe._id%>/edit">Edit</a>
                     <form action="/recipes/<%=recipe._id%>?_method=DELETE" method="post">
-                        <button>Delete</button>
+                        <button class="button-all">Delete</button>
                     </form>
                     <% } %>
                 </div>
@@ -26,12 +26,26 @@
             <div class="comments">
                 <div class="row">
                     <h1>Comments</h1>
-                    <a href="/recipes/<%=recipe._id%>/comments/new">Add new</a>
+                    <a class="button-all" href="/recipes/<%=recipe._id%>/comments/new">Add new</a>
                 </div>
                 <%recipe.comments.forEach(function(comment){%>
-                    <p>
-                        <strong><%= comment.author.username %> : </strong><%=comment.text%>
-                    </p>
+                    <div class="comment-view">
+                        <div class="text-comment">
+                            <p>
+                                <strong><%= comment.author.username %> : </strong>
+                                <%=comment.text%>
+                            </p>
+                        </div>
+                        <div class="btn-comment">
+                            <% if (currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.username == "tvnisp"){ %>
+                            <a class="button-all" 
+                            href="/recipes/<%=recipe._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                            <form action="/recipes/<%=recipe._id%>/comments/<%=comment._id%>?_method=DELETE" method="post">
+                                <button class="button-all">Delete</button>
+                            </form>
+                            <% } %>
+                        </div>
+                    </div>
                 <%})%>
             </div>
         </div>

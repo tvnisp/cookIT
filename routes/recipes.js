@@ -39,7 +39,7 @@ router.get("/:id", function(req, res){
     });
 });
 
-router.get("/:id/edit", checkOwnerShip, function(req, res){
+router.get("/:id/edit", checkRecipeOwnership, function(req, res){
     Recipe.findById(req.params.id, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -49,7 +49,7 @@ router.get("/:id/edit", checkOwnerShip, function(req, res){
     });
 });
 
-router.put("/:id", checkOwnerShip, function(req, res){
+router.put("/:id", checkRecipeOwnership, function(req, res){
     Recipe.findByIdAndUpdate(req.params.id, req.body.recipe, function(err, updateRecipe){
         if(err){
             console.log(err);
@@ -59,7 +59,7 @@ router.put("/:id", checkOwnerShip, function(req, res){
     });
 });
 
-router.delete("/:id", checkOwnerShip, function(req, res){
+router.delete("/:id", checkRecipeOwnership, function(req, res){
     Recipe.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log(err);
@@ -69,7 +69,7 @@ router.delete("/:id", checkOwnerShip, function(req, res){
     })
 });
 
-function checkOwnerShip(req, res, next){
+function checkRecipeOwnership(req, res, next){
     if(req.isAuthenticated()){
         Recipe.findById(req.params.id, function(err, updateRecipe){
             if(err){

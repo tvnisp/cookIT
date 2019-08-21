@@ -240,7 +240,7 @@
 }
 
 
-.small-nav a, .small-nav button, .comments .row a {
+.button-all {
     font-size: 1.5rem;
     text-decoration: none;
     color: #CFFFB3;
@@ -248,21 +248,15 @@
     background: rgba(0, 0, 0, 0.671);
     padding: 10px 20px;
     border-radius: 10px;
+    cursor: pointer;
     border: 1px solid #fcec52;
     -webkit-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
 }
 
-.small-nav a:hover, .small-nav button:hover {
-    color: #fcec52;
-    box-shadow: 3px 3px 10px black;
-}
 
 @media only screen and (max-width:950px) {
-    .small-nav button, .comments .row a {
-        font-size: 1rem !important;
-    }
     .show {
         flex-direction: column;
     }
@@ -309,6 +303,33 @@
     margin: 1rem 0;
 }
 
+.comment-view {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.comment-view .button-all {
+    font-size: 0.7rem;
+    margin-left: 4px;
+}
+
+.button-all:hover {
+    color: #fcec52;
+    box-shadow: 3px 3px 10px black;
+}
+
+.text-comment {
+    width: 60%;
+}
+
+.btn-comment{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .new-comment {
     margin-top: 3rem;
 }
@@ -334,7 +355,7 @@
         width: 320px;
         height: 400px;
     }
-    .small-nav a {
+    .button-all {
         font-size: 1rem;
         padding: 10px 20px;
     }

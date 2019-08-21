@@ -1,0 +1,15 @@
+<% include ../partials/header%>
+<header class="padding-back">
+    <div class="container">
+        <form class="all-inputs" action="/recipes/<%=recipe._id%>/comments/<%=comment._id%>%>?_method=PUT" method="POST">
+            <h1>Edit:</h1>
+            <input type="text" name="comment[text]" value="<%=comment.text%>">
+            <input type="submit" value="Submit">
+            <div class="small-nav">
+                <a class="button-all" href="/recipes">Back</a>
+            </div>
+        </form>
+    </div>
+</header>
+
+<% include ../partials/footer %>
