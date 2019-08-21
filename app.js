@@ -15,9 +15,10 @@ var indexRoutes     = require("./routes/landing"),
     recipesRoutes   = require("./routes/recipes"),
     commentsRoutes  = require("./routes/comments"),
     authRoutes      = require("./routes/auth")
-console.log()
 
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+// Database
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/cook_it"
+mongoose.connect(url, {useNewUrlParser: true});
 
 // Passport Configuration
 app.use(require("express-session")({
