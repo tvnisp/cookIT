@@ -1,16 +1,20 @@
 var express         = require("express"),
     app             = express(),
     port            = process.env.PORT || 5000,
-    landing         = require("./routes/landing"),
-    recipes         = require("./routes/recipes"),
-    comments        = require("./routes/comments"),
-    auth            = require("./routes/auth"),
     mongoose        = require("mongoose"),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
-    User            = require("./models/user");
+    User            = require("./models/user"),
+    Recipe          = require("./models/recipe"),
+    Comment         = require("./models/comment")
+
+// Routes
+var indexRoutes     = require("./routes/landing"),
+    recipesRoutes   = require("./routes/recipes"),
+    commentsRoutes  = require("./routes/comments"),
+    authRoutes      = require("./routes/auth")
 
 // mongoose.connect('mongodb://localhost:27017/cook_it', {useNewUrlParser: true});
 mongoose.connect('mongodb+srv://tvnisp:tornados512@cookit-zwdsp.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true});
@@ -40,10 +44,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 
 // Routes USE
-app.use("/", landing)
-app.use("/recipes", recipes)
-app.use("/recipes", comments)
-app.use(auth)
+app.use("/", indexRoutes)
+app.use("/recipes", recipesRoutes)
+app.use("/recipes/:id/comments", commentsRoutes)
+app.use(authRoutes)
 
 
 // Listen and serve
