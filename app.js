@@ -8,7 +8,8 @@ var express         = require("express"),
     LocalStrategy   = require("passport-local"),
     User            = require("./models/user"),
     Recipe          = require("./models/recipe"),
-    Comment         = require("./models/comment")
+    Comment         = require("./models/comment"),
+    flash           = require("connect-flash")
 
 // Routes
 var indexRoutes     = require("./routes/landing"),
@@ -31,17 +32,20 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// current User 
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    next();
-})
-
 // Set the app
+app.use(flash());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
+
+// current User 
+app.use(function(req, res, next){
+    res.locals.currentUser  = req.user;
+    res.locals.error        = req.flash("error");
+    res.locals.success      = req.flash("success");
+    next();
+})
 
 // Routes USE
 app.use("/", indexRoutes)
