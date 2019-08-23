@@ -1,12 +1,68 @@
 /* Landing Header */
 
 .landing {
-    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)),url("../img/bg.jpg"), center no-repeat;
     padding-top: 3rem;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
 }
+
+.landing li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: -1;
+    animation: imageAnimation 50s linear infinite; 
+}
+
+.landing li:nth-child(1) { 
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg.jpg); 
+  }
+  .landing li:nth-child(2) { 
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg2.jpg);
+    animation-delay: 10s; 
+  }
+  .landing li:nth-child(3) { 
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg3.jpg);
+    animation-delay: 20s; 
+  }
+  .landing li:nth-child(4) { 
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg4.jpg);
+    animation-delay: 30s; 
+  }
+  .landing li:nth-child(5) { 
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg5.jpg);
+    animation-delay: 40s; 
+  }
+
+@keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1
+    }
+    30% {
+      opacity: 0
+    }
+  }
 
 .landing-btn {
     z-index: 100;
