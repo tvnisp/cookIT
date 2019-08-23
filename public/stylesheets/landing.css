@@ -1,7 +1,7 @@
 /* Landing Header */
 
 .landing {
-    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0)), url(../img/bg5.jpg);
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,0));
     padding-top: 3rem;
     background-size: cover;
     height: 100%;
